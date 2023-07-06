@@ -20,5 +20,5 @@ export const ResponseUserSimpleSchema = z.object({
   id: UserSchema.shape.id,
 });
 export type ResponseUserSimple = {
-  id: number;
+  id: string;
 };

@@ -6,6 +6,7 @@ import { IContext } from '@/shared/interfaces/index.js';
 import { bcryptUtil, createSchemaValidator } from '@/utils/index.js';
 import { Selectable } from 'kysely';
 import { z } from 'zod';
+import { v4 as uuidv4 } from 'uuid';
 
 const dtoSchema = z.object({
   name: UserSchema.shape.name,
@@ -25,12 +26,13 @@ export async function registerUseCase(dto: RegisterDTO, ctx: IContext): Promise<
 
   const existingEmail = await db.selectFrom('User').select('email').where('email', '=', email).executeTakeFirst();
   if (existingEmail) {
-    throw new BadInputError({ email: ['Email already taken.'] });
+    throw new BadInputError({ email: ['Email already taken'] });
   }
 
   const user = await db
     .insertInto('User')
     .values({
+      id: uuidv4(),
       name,
       email,
       password: hash,

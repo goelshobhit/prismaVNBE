@@ -5,7 +5,7 @@ const updatedAt = z.string().datetime();
 
 export const UserSchema = z
   .object({
-    id: z.number(),
+    id: z.string(),
     name: z.string(),
     email: z.string().email(),
     password: z.string(),

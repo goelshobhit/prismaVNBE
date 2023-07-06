@@ -1,16 +1,17 @@
 import { userFactory } from '@/modules/user/factories/user.factory.js';
 import { ResponseUserFull } from '@/modules/user/responses/user.response.js';
 import { RequestHandler } from 'express';
-import { loginUseCase } from '../../../user/use-cases/login.use-case.js';
+import { loginUseCase } from '../use-cases/login.use-case.js';
 
 type ResponseBody = {
   user: ResponseUserFull;
+  token: string;
 };
 
 export const loginHandler: RequestHandler<any, ResponseBody, any, any> = async (req, res) => {
   const { email, password } = req.body as any;
 
-  const { user } = await loginUseCase(
+  const { user, token } = await loginUseCase(
     {
       email,
       password,
@@ -20,5 +21,6 @@ export const loginHandler: RequestHandler<any, ResponseBody, any, any> = async (
 
   res.send({
     user: userFactory.toFullResponse(user),
+    token,
   });
 };

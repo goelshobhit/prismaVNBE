@@ -11,7 +11,7 @@ export type UserRequestBody = {
 };
 
 export type User = {
-  id: any;
+  id: string;
   name: string;
   email: string;
   password: string;

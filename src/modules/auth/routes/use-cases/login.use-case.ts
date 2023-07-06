@@ -1,6 +1,6 @@
 import { InternalServerError, UnauthenticatedError } from '@/errors/index.js';
 import { IContext } from '@/shared/interfaces/index.js';
-import { sign } from 'jsonwebtoken';
+import Jwt from 'jsonwebtoken';
 import { bcryptUtil, createSchemaValidator } from '@/utils/index.js';
 import { z } from 'zod';
 import Session from 'supertokens-node/recipe/session/index.js';
@@ -34,7 +34,7 @@ export async function loginUseCase(dto: LoginDTO, ctx: IContext): Promise<LoginU
       }
 
       // Create token
-      const token = sign({ user_id: user.id, email }, 'Viral Nation!', {
+      const token = Jwt.sign({ user_id: user.id, email }, 'Viral Nation!', {
         expiresIn: '2h',
       });
 

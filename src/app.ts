@@ -15,7 +15,6 @@ import { createTerminus } from '@godaddy/terminus';
 
 import { maintenanceRouter } from '@/modules/maintenance/routes/index.js';
 import { authRouter } from '@/modules/auth/routes/index.js';
-import { userRouter } from '@/modules/user/routes/index.js';
 import { db } from '@/db/index.js';
 
 const app = express();
@@ -47,7 +46,6 @@ const app = express();
     // IMPORTANT: Add app routers here
     maintenanceRouter,
     authRouter,
-    userRouter,
   ];
   app.use(routers);
 
