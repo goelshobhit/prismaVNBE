@@ -17,6 +17,8 @@ COPY ./ ./
 RUN ls -al
 
 RUN npm install
+
+RUN npm install supertokens-node
 # Build project
 RUN npm run build:prod
 
