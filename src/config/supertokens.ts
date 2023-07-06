@@ -1,5 +1,7 @@
 import { z } from 'zod';
 import { env } from './environment.js';
+import Dashboard from 'supertokens-node/recipe/dashboard';
+import Session from 'supertokens-node/recipe/session';
 
 const SupertokensConfig = z.object({
   SUPERTOKENS_CONNECTION_URL: z
@@ -16,15 +18,15 @@ const SupertokensConfig = z.object({
   SUPERTOKENS_APP_NAME: z
     .string()
     .nonempty()
-    .default(() => (env.isProduction ? '' : 'GraphQL Starter')),
+    .default(() => (env.isProduction ? 'Viral Nation!' : 'GraphQL Starter')),
   SUPERTOKENS_API_DOMAIN: z
     .string()
     .nonempty()
-    .default(() => (env.isProduction ? '' : 'http://localhost')),
+    .default(() => 'http://localhost:8080'),
   SUPERTOKENS_WEBSITE_DOMAIN: z
     .string()
     .nonempty()
-    .default(() => (env.isProduction ? '' : 'http://localhost')),
+    .default(() => 'http://localhost:8080'),
 });
 type SupertokensConfig = z.infer<typeof SupertokensConfig>;
 
@@ -39,4 +41,10 @@ export const superTokensConfig = {
     apiDomain: config.SUPERTOKENS_API_DOMAIN,
     websiteDomain: config.SUPERTOKENS_WEBSITE_DOMAIN,
   },
+  recipeList: [
+    Session.init({
+      getTokenTransferMethod: () => 'header',
+    }),
+    Dashboard.init(),
+  ],
 } as const;

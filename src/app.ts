@@ -15,6 +15,7 @@ import { createTerminus } from '@godaddy/terminus';
 
 import { maintenanceRouter } from '@/modules/maintenance/routes/index.js';
 import { authRouter } from '@/modules/auth/routes/index.js';
+import { moviesRouter } from '@/modules/movies/routes/index.js';
 import { db } from '@/db/index.js';
 
 const app = express();
@@ -39,13 +40,14 @@ const app = express();
   app.use(corsMiddleware());
   app.use(superTokensMiddleware());
 
-  app.use(['/api', '/graphql'], verifySession({ sessionRequired: false }));
+  app.use(['/api/v1/movie/*', '/graphql'], verifySession({ sessionRequired: true }));
   app.use(createContextMiddleware());
 
   const routers: Router[] = [
     // IMPORTANT: Add app routers here
     maintenanceRouter,
     authRouter,
+    moviesRouter,
   ];
   app.use(routers);
 

@@ -1,6 +1,5 @@
 import { InternalServerError, UnauthenticatedError } from '@/errors/index.js';
 import { IContext } from '@/shared/interfaces/index.js';
-import Jwt from 'jsonwebtoken';
 import { bcryptUtil, createSchemaValidator } from '@/utils/index.js';
 import { z } from 'zod';
 import Session from 'supertokens-node/recipe/session/index.js';
@@ -34,14 +33,12 @@ export async function loginUseCase(dto: LoginDTO, ctx: IContext): Promise<LoginU
       }
 
       // Create token
-      const token = Jwt.sign({ user_id: user.id, email }, 'Viral Nation!', {
-        expiresIn: '2h',
-      });
 
       // IMPORTANT:
       // If you need to store session data, read more from the link below:
       // https://supertokens.io/docs/session/common-customizations/sessions/new-session#storing-session-information
-      await Session.createNewSession(ctx.req, ctx.res, user.id);
+      const session = await Session.createNewSession(ctx.req, ctx.res, user.id);
+      const token = session.getAccessToken();
 
       // When making graphql subscription requests, make sure to pass the sessionHandle in the `connectionParams` of the subscription client.
       // https://github.com/apollographql/subscriptions-transport-ws#constructorurl-options-websocketimpl

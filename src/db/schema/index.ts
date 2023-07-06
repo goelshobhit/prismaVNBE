@@ -14,7 +14,7 @@ export const UserSchema = z
 
 export const MovieSchema = z
   .object({
-    id: z.number(),
+    id: z.string(),
     name: z.string(),
     description: z.string(),
     directorName: z.string(),

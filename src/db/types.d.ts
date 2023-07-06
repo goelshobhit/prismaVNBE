@@ -22,6 +22,21 @@ export type User = {
   updatedAt: Generated<Timestamp>;
 };
 
+export type Movie = {
+  id: string;
+  name: string;
+  description: string;
+  userId: string;
+  directorName: string;
+  releaseDate: Generated<Timestamp>;
+  createdAt: Generated<Timestamp>;
+  /**
+   * We're using Kysely instead of Prisma Client so we have a responsibility to always update this value when the record is inserted/updated.
+   */
+  updatedAt: Generated<Timestamp>;
+};
+
 export type DB = {
   User: User;
+  Movie: Movie;
 };
