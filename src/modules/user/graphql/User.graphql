@@ -1,0 +1,11 @@
+type User implements Node {
+  id: ID!
+  name: String
+  email: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+extend type Query {
+  users(offset: Int, limit: Int = 10): [User!]!
+}
