@@ -16,8 +16,9 @@ RUN ls -al
 COPY ./ ./
 RUN ls -al
 
+RUN npm install
 # Build project
-RUN npm build:prod
+RUN npm run build:prod
 
 # List files under build directory for reference
 RUN ls -al build
