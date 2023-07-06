@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 
 
 COPY package.json ./
-COPY patches ./patches
+
 RUN ls -al
 
 # Copy files from host to container then list it
@@ -40,7 +40,7 @@ COPY --chown=node:node --from=builder /usr/src/app/build .
 # This is mainly for disabling Husky on Docker and CI.
 RUN npm pkg set scripts.prepare=" "
 
-COPY patches ./patches
+
 # Install production dependencies only
 
 # List the final directory for reference
