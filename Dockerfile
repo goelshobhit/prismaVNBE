@@ -50,7 +50,5 @@ RUN npm pkg set scripts.prepare=" "
 RUN ls -al
 RUN ls ./src -al
 
-# https://github.com/nodejs/docker-node/blob/main/docs/BestPractices.md#non-root-user
-USER node
 
 CMD ["node", "./src/app.js"]
