@@ -1,54 +1,23 @@
-# Declare a Docker build-time variable
-ARG NODE_IMAGE_VERSION=18-alpine
+# https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
 
-### Builder Stage ###
-
-FROM node:${NODE_IMAGE_VERSION} as builder
-
-WORKDIR /usr/src/app
-
-
-COPY package.json ./
-
-RUN ls -al
-
-# Copy files from host to container then list it
-COPY ./ ./
-RUN ls -al
-
-RUN npm install
-
-RUN npm install supertokens-node
-# Build project
-RUN npm run build:prod
-
-# List files under build directory for reference
-RUN ls -al build
-
-### Final Stage ###
-
-FROM node:${NODE_IMAGE_VERSION} as app
-
-ENV NODE_ENV=production
+FROM node:18-alpine
 
 EXPOSE 8080
 
 WORKDIR /usr/src/app
 
-# Copy the necessary files from the builder stage to this stage
-COPY --chown=node:node --from=builder /usr/src/app/build .
+RUN npm install -g pnpm
 
+COPY package.json ./
+COPY pnpm-lock.yaml ./
 
-# On npm@9, `npm set-script` has been removed: https://github.blog/changelog/2022-10-24-npm-v9-0-0-released/
-# This is mainly for disabling Husky on Docker and CI.
-RUN npm pkg set scripts.prepare=" "
+RUN pnpm install
 
+# Copy files from host to container
+COPY ./ ./
 
-# Install production dependencies only
+RUN pnpm build
 
-# List the final directory for reference
 RUN ls -al
-RUN ls ./src -al
 
-
-CMD ["node", "./src/app.js"]
+CMD [ "pnpm", "start" ]
