@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { env } from './environment.js';
-import Dashboard from 'supertokens-node/recipe/dashboard';
 import Session from 'supertokens-node/recipe/session';
 
 const SupertokensConfig = z.object({
@@ -45,6 +44,5 @@ export const superTokensConfig = {
     Session.init({
       getTokenTransferMethod: () => 'header',
     }),
-    Dashboard.init(),
   ],
 } as const;
