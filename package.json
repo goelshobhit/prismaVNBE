@@ -26,6 +26,7 @@
     "dataloader": "2.2.2",
     "dotenv": "16.1.4",
     "express": "4.18.2",
+    "faker": "^6.6.6",
     "graphql": "16.6.0",
     "graphql-depth-limit": "1.1.0",
     "graphql-redis-subscriptions": "2.6.0",

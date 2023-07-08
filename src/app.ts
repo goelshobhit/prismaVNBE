@@ -40,7 +40,7 @@ const app = express();
   app.use(corsMiddleware());
   app.use(superTokensMiddleware());
 
-  app.use(['/api/v1/movie/*', '/graphql'], verifySession({ sessionRequired: true }));
+  app.use(['/api/v1/movie/*', '/graphql'], verifySession({ sessionRequired: false }));
   app.use(createContextMiddleware());
 
   const routers: Router[] = [

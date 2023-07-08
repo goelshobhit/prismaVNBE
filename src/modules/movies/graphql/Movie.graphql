@@ -1,0 +1,14 @@
+type Movie {
+  id: ID!
+  name: String
+  description: String
+  directorName: String
+  releaseDate: DateTime
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+extend type Query {
+  movies: [Movie]
+}
+
