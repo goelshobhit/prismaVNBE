@@ -9,6 +9,6 @@ type Movie {
 }
 
 extend type Query {
-  movies: [Movie]
+  movies(filter: String,offset: Int, limit: Int, orderKey: String, orderDirection: SortDirection): [Movie]
 }
 
