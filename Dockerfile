@@ -13,7 +13,7 @@ COPY package.json ./
 COPY pnpm-lock.yaml ./
 COPY patches ./patches
 RUN ls -al
-RUN pnpm install
+RUN pnpm install --frozen-lockfile
 
 # Copy files from host to container then list it
 COPY ./ ./
@@ -47,7 +47,7 @@ RUN npm pkg set scripts.prepare=" "
 COPY pnpm-lock.yaml ./
 COPY patches ./patches
 # Install production dependencies only
-RUN pnpm install
+RUN pnpm install --frozen-lockfile --prod
 
 # List the final directory for reference
 RUN ls -al
