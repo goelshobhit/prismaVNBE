@@ -30,7 +30,7 @@ EXPOSE 8080
 WORKDIR /usr/src/app
 
 # Copy the necessary files from the builder stage to this stage
-COPY --chown=node:node --from=builder /usr/src/app/build .
+COPY --chown=node:node --from=builder /usr/src/app .
 
 RUN npm install -g pnpm
 
