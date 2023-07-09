@@ -12,7 +12,7 @@
     "test": "echo \"No test specified\" && exit 0",
     "tsc-check": "tsc --noEmit",
     "generate:gql-types": "graphql-codegen",
-    "postinstall": "prisma generate"
+    "postinstall": "npx prisma generate"
   },
   "dependencies": {
     "@apollo/server": "4.7.5",

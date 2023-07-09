@@ -48,6 +48,7 @@ COPY pnpm-lock.yaml ./
 COPY patches ./patches
 # Install production dependencies only
 RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install -g @prisma/cli --save-dev
 
 # List the final directory for reference
 RUN ls -al
