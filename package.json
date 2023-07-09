@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "start": "gulp dev",
+    "start": "npx prisma generate && gulp dev",
     "build": "gulp build",
     "build:prod": "gulp build --prod",
     "lint": "eslint ./src",
