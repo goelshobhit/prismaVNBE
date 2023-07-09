@@ -39,6 +39,7 @@ WORKDIR /usr/src/app
 COPY --chown=node:node --from=builder /usr/src/app/build .
 COPY --chown=node:node --from=builder /app/prisma /app/prisma
 COPY --chown=node:node --from=builder /app/src /app/src
+COPY --chown=node:node --from=builder prisma ./prisma/ 
 
 RUN npm install -g pnpm
 
