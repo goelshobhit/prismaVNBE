@@ -9,6 +9,9 @@ WORKDIR /usr/src/app
 
 RUN npm install -g pnpm
 
+# Build project
+RUN pnpm run build:prod
+
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 
@@ -18,9 +21,6 @@ RUN pnpm install
 # Copy files from host to container then list it
 COPY ./ ./
 RUN ls -al
-
-# Build project
-RUN npm build:prod
 
 # List files under build directory for reference
 RUN ls -al build
