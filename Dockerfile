@@ -9,9 +9,6 @@ WORKDIR /usr/src/app
 
 RUN npm install -g pnpm
 
-# Build project
-RUN pnpm run build:prod
-
 COPY package.json ./
 COPY pnpm-lock.yaml ./
 
