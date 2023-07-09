@@ -19,9 +19,6 @@ RUN pnpm install
 COPY ./ ./
 RUN ls -al
 
-# List files under build directory for reference
-RUN ls -al build
-
 ### Final Stage ###
 
 FROM node:${NODE_IMAGE_VERSION} as app
