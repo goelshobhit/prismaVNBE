@@ -47,6 +47,7 @@ RUN npm pkg set scripts.prepare=" "
 COPY pnpm-lock.yaml ./
 COPY patches ./patches
 # Install production dependencies only
+RUN pnpm setup
 RUN pnpm install --frozen-lockfile --prod
 RUN pnpm install -g @prisma/cli --save-dev
 
