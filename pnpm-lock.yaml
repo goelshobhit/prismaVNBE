@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -14,8 +14,8 @@ patchedDependencies:
 
 dependencies:
   '@apollo/server':
-    specifier: 4.7.2
-    version: 4.7.2(graphql@16.6.0)
+    specifier: 4.7.5
+    version: 4.7.5(graphql@16.6.0)
   '@godaddy/terminus':
     specifier: 4.12.0
     version: 4.12.0
@@ -28,6 +28,9 @@ dependencies:
   '@graphql-tools/schema':
     specifier: 10.0.0
     version: 10.0.0(graphql@16.6.0)
+  '@prisma/client':
+    specifier: 4.16.2
+    version: 4.16.2(prisma@4.15.0)
   bcryptjs:
     specifier: 2.4.3
     version: 2.4.3
@@ -203,8 +206,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.18
     dev: true
 
-  /@apollo/cache-control-types@1.0.2(graphql@16.6.0):
-    resolution: {integrity: sha512-Por80co1eUm4ATsvjCOoS/tIR8PHxqVjsA6z76I6Vw0rFn4cgyVElQcmQDIZiYsy41k8e5xkrMRECkM2WR8pNw==}
+  /@apollo/cache-control-types@1.0.3(graphql@16.6.0):
+    resolution: {integrity: sha512-F17/vCp7QVwom9eG7ToauIKdAxpSoadsJnqIfyryLFSkLSOEqu+eC5Z3N8OXcUVStuOMcNHlyraRsA6rRICu4g==}
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
     dependencies:
@@ -230,27 +233,27 @@ packages:
       long: 4.0.0
     dev: false
 
-  /@apollo/server-gateway-interface@1.1.0(graphql@16.6.0):
-    resolution: {integrity: sha512-0rhG++QtGfr4YhhIHgxZ9BdMFthaPY6LbhI9Au90osbfLMiZ7f8dmZsEX1mp7O1h8MJwCu6Dp0I/KcGbSvfUGA==}
+  /@apollo/server-gateway-interface@1.1.1(graphql@16.6.0):
+    resolution: {integrity: sha512-pGwCl/po6+rxRmDMFgozKQo2pbsSwE91TpsDBAOgf74CRDPXHHtM88wbwjab0wMMZh95QfR45GGyDIdhY24bkQ==}
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
     dependencies:
-      '@apollo/usage-reporting-protobuf': 4.1.0
+      '@apollo/usage-reporting-protobuf': 4.1.1
       '@apollo/utils.fetcher': 2.0.1
       '@apollo/utils.keyvaluecache': 2.1.1
       '@apollo/utils.logger': 2.0.1
       graphql: 16.6.0
     dev: false
 
-  /@apollo/server@4.7.2(graphql@16.6.0):
-    resolution: {integrity: sha512-GCGgdrz+1+9fNRuj64J4H+iyYNm6C+Uph5kNbYgSEUz8ujjs3P4FKKMbWov2N6z2kany3y+QjOsHXksrhqrkgQ==}
+  /@apollo/server@4.7.5(graphql@16.6.0):
+    resolution: {integrity: sha512-XobKpTnW/jbmr0DuJ+8zBzoeL6uEat4CkBN7kOCjhXEUuCNxiLrQGrWFVDqgV7bSdOJr6o2POmZYBPNQXLdyvA==}
     engines: {node: '>=14.16.0'}
     peerDependencies:
       graphql: ^16.6.0
     dependencies:
-      '@apollo/cache-control-types': 1.0.2(graphql@16.6.0)
-      '@apollo/server-gateway-interface': 1.1.0(graphql@16.6.0)
-      '@apollo/usage-reporting-protobuf': 4.1.0
+      '@apollo/cache-control-types': 1.0.3(graphql@16.6.0)
+      '@apollo/server-gateway-interface': 1.1.1(graphql@16.6.0)
+      '@apollo/usage-reporting-protobuf': 4.1.1
       '@apollo/utils.createhash': 2.0.1
       '@apollo/utils.fetcher': 2.0.1
       '@apollo/utils.isnodelike': 2.0.1
@@ -280,8 +283,8 @@ packages:
       - supports-color
     dev: false
 
-  /@apollo/usage-reporting-protobuf@4.1.0:
-    resolution: {integrity: sha512-hXouMuw5pQVkzi8dgMybmr6Y11+eRmMQVoB5TF0HyTwAg9SOq/v3OCuiYqcVUKdBcskU9Msp+XvjAk0GKpWCwQ==}
+  /@apollo/usage-reporting-protobuf@4.1.1:
+    resolution: {integrity: sha512-u40dIUePHaSKVshcedO7Wp+mPiZsaU6xjv9J+VyxpoU/zL6Jle+9zWeG98tr/+SZ0nZ4OXhrbb8SNr0rAPpIDA==}
     dependencies:
       '@apollo/protobufjs': 1.2.7
     dev: false
@@ -369,7 +372,7 @@ packages:
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
     dependencies:
-      '@apollo/usage-reporting-protobuf': 4.1.0
+      '@apollo/usage-reporting-protobuf': 4.1.1
       '@apollo/utils.dropunuseddefinitions': 2.0.1(graphql@16.6.0)
       '@apollo/utils.printwithreducedwhitespace': 2.0.1(graphql@16.6.0)
       '@apollo/utils.removealiases': 2.0.1(graphql@16.6.0)
@@ -2044,6 +2047,20 @@ packages:
     dev: true
     optional: true
 
+  /@prisma/client@4.16.2(prisma@4.15.0):
+    resolution: {integrity: sha512-qCoEyxv1ZrQ4bKy39GnylE8Zq31IRmm8bNhNbZx7bF2cU5aiCCnSa93J2imF88MBjn7J9eUQneNxUQVJdl/rPQ==}
+    engines: {node: '>=14.17'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81
+      prisma: 4.15.0
+    dev: false
+
   /@prisma/debug@4.13.0:
     resolution: {integrity: sha512-JrltTewF/paRb5mcM5OvcEi9DtdX0sINOAswruxKQrwOLA7Phqb52OfY38MIzGrsrJ8iUGVqQ5bpYZYpxOGCsQ==}
     dependencies:
@@ -2076,6 +2093,10 @@ packages:
       - supports-color
     dev: true
 
+  /@prisma/engines-version@4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81:
+    resolution: {integrity: sha512-q617EUWfRIDTriWADZ4YiWRZXCa/WuhNgLTVd+HqWLffjMSPzyM5uOWoauX91wvQClSKZU4pzI4JJLQ9Kl62Qg==}
+    dev: false
+
   /@prisma/engines@4.13.0:
     resolution: {integrity: sha512-HrniowHRZXHuGT9XRgoXEaP2gJLXM5RMoItaY2PkjvuZ+iHc0Zjbm/302MB8YsPdWozAPHHn+jpFEcEn71OgPw==}
     requiresBuild: true
@@ -2084,7 +2105,6 @@ packages:
   /@prisma/engines@4.15.0:
     resolution: {integrity: sha512-FTaOCGs0LL0OW68juZlGxFtYviZa4xdQj/rQEdat2txw0s3Vu/saAPKjNVXfIgUsGXmQ72HPgNr6935/P8FNAA==}
     requiresBuild: true
-    dev: true
 
   /@prisma/fetch-engine@4.13.0:
     resolution: {integrity: sha512-khMMm3I8nMUgwd7DoM1wBFjMKn/Z5PZF27EMQGPtquM1nRt601blJbep0qodXR7oHioQolCK8gfbw5Hfdml1mg==}
@@ -7465,7 +7485,6 @@ packages:
     requiresBuild: true
     dependencies:
       '@prisma/engines': 4.15.0
-    dev: true
 
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
