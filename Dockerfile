@@ -20,7 +20,7 @@ COPY ./ ./
 RUN ls -al
 
 # Build project
-RUN pnpm build:prod
+RUN npm run build:prod
 
 # List files under build directory for reference
 RUN ls -al build
