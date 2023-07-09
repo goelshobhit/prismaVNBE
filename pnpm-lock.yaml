@@ -28,9 +28,6 @@ dependencies:
   '@graphql-tools/schema':
     specifier: 10.0.0
     version: 10.0.0(graphql@16.6.0)
-  '@prisma/client':
-    specifier: 4.16.2
-    version: 4.16.2(prisma@4.15.0)
   bcryptjs:
     specifier: 2.4.3
     version: 2.4.3
@@ -111,6 +108,9 @@ devDependencies:
   '@graphql-codegen/typescript-resolvers':
     specifier: 4.0.0
     version: 4.0.0(graphql@16.6.0)
+  '@prisma/client':
+    specifier: 4.16.2
+    version: 4.16.2(prisma@4.15.0)
   '@rushstack/eslint-patch':
     specifier: 1.3.0
     version: 1.3.0
@@ -2059,7 +2059,7 @@ packages:
     dependencies:
       '@prisma/engines-version': 4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81
       prisma: 4.15.0
-    dev: false
+    dev: true
 
   /@prisma/debug@4.13.0:
     resolution: {integrity: sha512-JrltTewF/paRb5mcM5OvcEi9DtdX0sINOAswruxKQrwOLA7Phqb52OfY38MIzGrsrJ8iUGVqQ5bpYZYpxOGCsQ==}
@@ -2095,7 +2095,7 @@ packages:
 
   /@prisma/engines-version@4.16.1-1.4bc8b6e1b66cb932731fb1bdbbc550d1e010de81:
     resolution: {integrity: sha512-q617EUWfRIDTriWADZ4YiWRZXCa/WuhNgLTVd+HqWLffjMSPzyM5uOWoauX91wvQClSKZU4pzI4JJLQ9Kl62Qg==}
-    dev: false
+    dev: true
 
   /@prisma/engines@4.13.0:
     resolution: {integrity: sha512-HrniowHRZXHuGT9XRgoXEaP2gJLXM5RMoItaY2PkjvuZ+iHc0Zjbm/302MB8YsPdWozAPHHn+jpFEcEn71OgPw==}
@@ -2105,6 +2105,7 @@ packages:
   /@prisma/engines@4.15.0:
     resolution: {integrity: sha512-FTaOCGs0LL0OW68juZlGxFtYviZa4xdQj/rQEdat2txw0s3Vu/saAPKjNVXfIgUsGXmQ72HPgNr6935/P8FNAA==}
     requiresBuild: true
+    dev: true
 
   /@prisma/fetch-engine@4.13.0:
     resolution: {integrity: sha512-khMMm3I8nMUgwd7DoM1wBFjMKn/Z5PZF27EMQGPtquM1nRt601blJbep0qodXR7oHioQolCK8gfbw5Hfdml1mg==}
@@ -7485,6 +7486,7 @@ packages:
     requiresBuild: true
     dependencies:
       '@prisma/engines': 4.15.0
+    dev: true
 
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}

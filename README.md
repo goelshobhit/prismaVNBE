@@ -170,7 +170,7 @@ If first time setting up:
 
 ## Sample Environment File
 
-````dotenv
+```dotenv
 # Make sure to set this to "production" in production environments
 NODE_ENV=
 
@@ -178,9 +178,16 @@ NODE_ENV=
 PORT=
 
 # DB Connection URLs
-DATABASE_URL=
+POSTGRES_CONNECTION_URL=
+REDIS_CONNECTION_URL=
 
-
+# SuperTokens
+SUPERTOKENS_CONNECTION_URL=
+SUPERTOKENS_API_KEY=
+SUPERTOKENS_APP_NAME=
+SUPERTOKENS_API_DOMAIN=
+SUPERTOKENS_WEBSITE_DOMAIN=
+```
 
 See files inside `src/config/*` that uses `process.env`. Those are the environment variables that you can configure.
 
@@ -293,7 +300,7 @@ First, identify the Container ID:
 
 ```bash
 docker ps
-````
+```
 
 Then run the following command:
 
