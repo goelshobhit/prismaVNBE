@@ -37,10 +37,10 @@ const app = express();
   app.use(cookieParser());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-  app.use(corsMiddleware());
+  app.use(corsMiddleware()); // Add CORS middleware here
   app.use(superTokensMiddleware());
 
-  app.use(['/api/v1/movie/*', '/graphql'], verifySession({ sessionRequired: false }));
+  app.use(['/api/v1/movie/*', '/graphql'], verifySession({ sessionRequired: true }));
   app.use(createContextMiddleware());
 
   const routers: Router[] = [
